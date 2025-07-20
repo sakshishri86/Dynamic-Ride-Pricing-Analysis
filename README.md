@@ -1,2 +1,3 @@
 # Dynamic-Ride-Pricing-Analysis
-Dynamic Pricing Analysis
+This project presents an end-to-end analysis and implementation of a dynamic pricing strategy for a ride-sharing service, designed to optimize fare prices based on real-time market factors. What sets this analysis apart from a simplistic approach is its multi-factor pricing model. Instead of relying solely on the basic demand-supply ratio (riders vs. drivers), this model incorporates a richer set of business rules by considering crucial variables such as Location Category (Urban/Suburban/Rural), Vehicle Type (Premium/Economy), and a tiered Customer Loyalty Status to offer strategic discounts. The final outcome is a robust pricing engine developed in Python (Pandas) and an interactive Power BI dashboard designed to visualize the financial impact and performance of this smarter, more realistic pricing strategy.
+
