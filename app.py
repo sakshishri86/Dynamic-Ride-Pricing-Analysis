@@ -6,11 +6,11 @@ import streamlit as st
 # Page config
 st.set_page_config(page_title="Dynamic Pricing EDA", layout="wide")
 
-st.title("🚖 Dynamic Pricing Strategy Explorer")
+st.title(" Dynamic Pricing Strategy Explorer")
 st.markdown("Visual analysis and dynamic pricing implementation based on ride data.")
 
 # Step 2: Load and Preprocess Data
-st.header("📥 Data Loading and Preprocessing")
+st.header(" Data Loading and Preprocessing")
 
 full_data = pd.read_csv("dynamic_pricing.csv")
 
@@ -29,7 +29,7 @@ st.write("### Preview of Data")
 st.dataframe(data.head())
 
 # Step 3: EDA
-st.header("📊 Exploratory Data Analysis")
+st.header("Exploratory Data Analysis")
 
 # --- Graph 1: Correlation Heatmap ---
 st.subheader("Correlation Matrix")
@@ -70,7 +70,7 @@ ax4.tick_params(labelsize=6)
 st.pyplot(fig4)
 
 # Step 4: Apply Pricing Strategy
-st.header("💡 Dynamic Pricing Strategy")
+st.header("Dynamic Pricing Strategy")
 
 data['demand_supply_ratio'] = data['Number of Riders'] / data['Number of Drivers']
 high_demand_threshold = data['demand_supply_ratio'].quantile(0.75)
@@ -81,7 +81,7 @@ data.loc[data['demand_supply_ratio'] > high_demand_threshold, 'New Fare'] *= 1.2
 data.loc[data['demand_supply_ratio'] < low_demand_threshold, 'New Fare'] *= 0.8
 data['New Fare'] = data['New Fare'].round(2)
 
-st.write("### Dynamic Pricing Applied ✅")
+st.write("### Dynamic Pricing Applied ")
 st.dataframe(data[['Expected Ride Duration', 'Historical Cost of Ride', 'demand_supply_ratio', 'New Fare']].head())
 
 # Step 5: Strategy Impact Visualization
@@ -108,7 +108,7 @@ ax6.pie(avg_fare_by_vehicle, labels=avg_fare_by_vehicle.index, autopct='%1.1f%%'
 st.pyplot(fig6)
 
 # Step 6: Final Conclusion
-st.header("📌 Final Project Conclusion")
+st.header(" Final Project Conclusion")
 st.markdown("""
 - **Old Pricing Flaw:** Ride cost was almost entirely duration-based.
 - **Dynamic Strategy:** Adjusted fare based on demand/supply ratio using quantiles.
