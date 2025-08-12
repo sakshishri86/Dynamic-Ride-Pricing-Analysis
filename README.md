@@ -27,7 +27,7 @@ The dataset used for this analysis is the "Dynamic Pricing Dataset" available on
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 *   **Data Analysis:** Python, Pandas, NumPy
 *   **Data Visualization:** Matplotlib, Seaborn
@@ -36,11 +36,10 @@ The dataset used for this analysis is the "Dynamic Pricing Dataset" available on
 
 ---
 
-## 🚀 Live Interactive Demo
+##  Live Interactive Demo
 
 You can view and interact with the live project hosted on Streamlit Cloud. Explore how different factors affect ride prices in real-time!
 
 **[View the Live Streamlit App](https://share.streamlit.io/sakshishri86/Dynamic-Ride-Pricing-Analysis/main/app.py)**
 
-*(Note: Please ensure your GitHub repository is public and the main script is named `app.py` for this link to work. If your file has a different name, just change `app.py` in the URL to that name.)*
 
