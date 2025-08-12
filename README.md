@@ -1,15 +1,46 @@
-This project provides a comprehensive analysis of the dynamic pricing model used by ride-hailing services. 
-The primary goal is to identify the key drivers behind price fluctuations and understand how factors like demand, supply, time of day, and location impact ride costs. 
-The analysis is presented through an interactive web application built with Streamlit.
-  Dynamic Pricing: Case Study
-A ride-sharing company wants to implement a dynamic pricing strategy to optimize fares based on real-time market conditions. 
-The company only uses ride duration to decide ride fares currently. 
-The company aims to leverage data-driven techniques to analyze historical data and develop a predictive model that can dynamically adjust prices in response to changing factors.
+# Dynamic Ride-Pricing Analysis 
 
-A dataset containing historical ride data has been provided. 
-The dataset includes features such as the number of riders, number of drivers, location category, customer loyalty status, 
-number of past rides, average ratings, time of booking, vehicle type, expected ride duration, and historical cost of the rides.
+### A Data-Driven Approach to Optimize Ride-Hailing Fares
 
-Your goal is to build a dynamic pricing model that incorporates the provided features to predict optimal fares for rides in real-time. T
-he model must consider factors such as demand patterns and supply availability.
+
+This project provides a comprehensive analysis of the factors influencing dynamic pricing for ride-hailing services. The goal is to move beyond simple duration-based fares and build a predictive model that suggests optimal prices in real-time.
+
+The entire analysis and model are presented through an interactive web application built with **Streamlit**, allowing users to see how changing different variables can affect ride prices.
+
+---
+
+## Project Goal
+
+The primary objective is to build a dynamic pricing model that incorporates multiple features to predict optimal fares for rides in real-time. The model must consider factors such as:
+*   Demand and supply patterns
+*   Customer loyalty and historical data
+*   Location and time-based variables
+*   Vehicle type and ride characteristics
+
+---
+
+##  Dataset
+
+The dataset used for this analysis is the "Dynamic Pricing Dataset" available on Kaggle. It includes various features like number of riders, drivers, vehicle type, customer loyalty status, and historical ride costs.
+
+**[Access the Dataset on Kaggle](https://www.kaggle.com/datasets/arashnic/dynamic-pricing-dataset)**
+
+---
+
+## 🛠️ Technology Stack
+
+*   **Data Analysis:** Python, Pandas, NumPy
+*   **Data Visualization:** Matplotlib, Seaborn
+*   **Predictive Modeling:** Scikit-learn
+*   **Web Application:** Streamlit
+
+---
+
+## 🚀 Live Interactive Demo
+
+You can view and interact with the live project hosted on Streamlit Cloud. Explore how different factors affect ride prices in real-time!
+
+**[View the Live Streamlit App](https://share.streamlit.io/sakshishri86/Dynamic-Ride-Pricing-Analysis/main/app.py)**
+
+*(Note: Please ensure your GitHub repository is public and the main script is named `app.py` for this link to work. If your file has a different name, just change `app.py` in the URL to that name.)*
 
