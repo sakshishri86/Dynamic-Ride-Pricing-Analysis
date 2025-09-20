@@ -33,7 +33,7 @@ st.header("Exploratory Data Analysis")
 
 # --- Graph 1: Correlation Heatmap ---
 st.subheader("Correlation Matrix")
-fig1, ax1 = plt.subplots(figsize=(2.8, 2))
+fig1, ax1 = plt.subplots(figsize=(1.8, 1))
 correlation_matrix = data.select_dtypes(include=['number']).corr()
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", ax=ax1, cbar=False,
             annot_kws={"size": 6})
@@ -43,7 +43,7 @@ st.caption("Strong correlation between ride duration and cost.")
 
 # --- Graph 2: Distribution of Expected Ride Duration ---
 st.subheader("Expected Ride Duration Distribution")
-fig2, ax2 = plt.subplots(figsize=(3, 2.2))
+fig2, ax2 = plt.subplots(figsize=(2, 1.2))
 sns.histplot(data['Expected Ride Duration'], kde=True, bins=30, color='skyblue', ax=ax2)
 ax2.set_xlabel('', fontsize=6)
 ax2.set_ylabel('', fontsize=6)
@@ -52,7 +52,7 @@ st.pyplot(fig2)
 
 # --- Graph 3: Ride Duration vs Historical Cost ---
 st.subheader("Ride Duration vs Historical Cost")
-fig3, ax3 = plt.subplots(figsize=(3, 2.2))
+fig3, ax3 = plt.subplots(figsize=(2,1.2))
 sns.scatterplot(x='Expected Ride Duration', y='Historical Cost of Ride',
                 data=data, alpha=0.5, ax=ax3, s=8)
 ax3.set_xlabel('', fontsize=6)
@@ -62,7 +62,7 @@ st.pyplot(fig3)
 
 # --- Graph 4: Historical Cost Distribution ---
 st.subheader("Historical Cost of Ride Distribution")
-fig4, ax4 = plt.subplots(figsize=(3, 2.2))
+fig4, ax4 = plt.subplots(figsize=(2, 1.2))
 sns.histplot(data['Historical Cost of Ride'], kde=True, bins=30, color='salmon', ax=ax4)
 ax4.set_xlabel('', fontsize=6)
 ax4.set_ylabel('', fontsize=6)
@@ -147,7 +147,7 @@ st.table(metrics_linear)
 
 # Plot Actual vs Predicted for Linear Regression
 st.markdown("#### Actual vs. Predicted (Linear Regression)")
-fig_lr_pred, ax_lr_pred = plt.subplots(figsize=(4.5, 3))
+fig_lr_pred, ax_lr_pred = plt.subplots(figsize=(3.5, 2))
 ax_lr_pred.scatter(y_test, y_pred_linear, alpha=0.6, s=10)
 ax_lr_pred.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)
 ax_lr_pred.set_xlabel("Actual New Fare", fontsize=7)
@@ -179,7 +179,7 @@ st.table(metrics_rf)
 
 # Plot Actual vs Predicted for Random Forest
 st.markdown("#### Actual vs. Predicted (Random Forest Regressor)")
-fig_rf_pred, ax_rf_pred = plt.subplots(figsize=(4.5, 3))
+fig_rf_pred, ax_rf_pred = plt.subplots(figsize=(3.5, 2))
 ax_rf_pred.scatter(y_test, y_pred_rf, alpha=0.6, s=10, color='forestgreen')
 ax_rf_pred.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)
 ax_rf_pred.set_xlabel("Actual New Fare", fontsize=7)
@@ -194,7 +194,7 @@ st.caption("The closer the points are to the red dashed line, the better the mod
 st.subheader("3. Feature Importance from Random Forest")
 feature_importances = pd.Series(rf_model.feature_importances_, index=X.columns).sort_values(ascending=False)
 
-fig7, ax7 = plt.subplots(figsize=(4, 2.5))
+fig7, ax7 = plt.subplots(figsize=(3, 1.5))
 sns.barplot(x=feature_importances.values, y=feature_importances.index, ax=ax7, palette='viridis')
 ax7.set_xlabel("Importance", fontsize=7)
 ax7.set_ylabel("Feature", fontsize=7)
@@ -211,7 +211,7 @@ st.header("📈 Strategy Impact Visualization")
 
 # --- Graph 5: Old Fare vs New Fare ---
 st.subheader("Old vs New Fare Distribution")
-fig5, ax5 = plt.subplots(figsize=(3.2, 2.2))
+fig5, ax5 = plt.subplots(figsize=(1.2, 0.2))
 sns.histplot(data['Historical Cost of Ride'], color="red", label="Old Fare", kde=True, alpha=0.4, ax=ax5)
 sns.histplot(data['New Fare'], color="green", label="New Fare", kde=True, alpha=0.4, ax=ax5)
 ax5.legend(fontsize=6)
@@ -223,7 +223,7 @@ st.pyplot(fig5)
 # --- Graph 6: New Fare by Vehicle Type ---
 st.subheader("New Fare Share by Vehicle Type")
 avg_fare_by_vehicle = data.groupby('Vehicle Type')['New Fare'].mean()
-fig6, ax6 = plt.subplots(figsize=(2.5, 2.5))
+fig6, ax6 = plt.subplots(figsize=(1.5, 1.5))
 ax6.pie(avg_fare_by_vehicle, labels=avg_fare_by_vehicle.index, autopct='%1.1f%%',
         startangle=90, colors=['lightcoral', 'lightskyblue'],
         textprops={'fontsize': 6})
@@ -238,7 +238,7 @@ st.pyplot(fig6)
 # - **Business Impact:** Boosted potential profitability and user satisfaction.
 # """)
 # --- Updated Final Conclusion ---
-st.header("Updated Final Project Conclusion")
+st.header("Final Project Conclusion")
 st.markdown(f"""
 Based on our Exploratory Data Analysis (EDA) and the subsequent Regression Analysis:
 
